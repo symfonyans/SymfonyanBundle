@@ -1,6 +1,6 @@
 <?php
 
-namespace Brtriver\SymfonyanBundle\Controller;
+namespace Acme\SymfonyanBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

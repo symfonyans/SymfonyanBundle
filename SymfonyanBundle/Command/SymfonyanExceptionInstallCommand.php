@@ -1,5 +1,5 @@
 <?php
-namespace Brtriver\SymfonyanBundle\Command;
+namespace Acme\SymfonyanBundle\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;

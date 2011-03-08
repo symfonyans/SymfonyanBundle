@@ -1,6 +1,6 @@
 <?php
 
-namespace Brtriver\SymfonyanBundle;
+namespace Acme\SymfonyanBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
