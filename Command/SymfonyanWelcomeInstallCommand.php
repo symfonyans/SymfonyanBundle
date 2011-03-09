@@ -32,7 +32,7 @@ class SymfonyanWelcomeInstallCommand extends Command
         $this
             ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlinks the welcome page instead of copying it')
             ->setName('symfonyan:welcome-install')
-            ->setDescription('Change the icon of the exception page to Symfonyan')
+            ->setDescription('Change the welcome page to Symfonyan')
         ;
     }
 
