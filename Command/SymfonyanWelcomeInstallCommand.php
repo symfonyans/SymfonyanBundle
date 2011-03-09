@@ -13,7 +13,7 @@ use Symfony\Component\Console\Command\Command;
  *
  * @author brtriver <brt.river@gmail.com>
  */
-class SymfonyanExceptionInstallCommand extends Command
+class SymfonyanWelcomeInstallCommand extends Command
 {
     /**
      * @var \Symfony\Component\DependencyInjection\ContainerInterface
@@ -30,8 +30,8 @@ class SymfonyanExceptionInstallCommand extends Command
     protected function configure()
     {
         $this
-            ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlinks the exception page instead of copying it')
-            ->setName('symfonyan:exception-install')
+            ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlinks the welcome page instead of copying it')
+            ->setName('symfonyan:welcome-install')
             ->setDescription('Change the icon of the exception page to Symfonyan')
         ;
     }
@@ -46,10 +46,10 @@ class SymfonyanExceptionInstallCommand extends Command
         $filesystem = $this->container->get('filesystem');
 
         // Create the bundles directory otherwise symlink will fail.
-        if (is_dir($originDir = __DIR__.'/../Resources/views/FrameworkBundle')) {
-            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/FrameworkBundle</comment>'));
+        if (is_dir($originDir = __DIR__.'/../Resources/views/AcmeDemoBundle')) {
+            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/AcmeDemoBundle</comment>'));
 
-            $targetDir = $this->container->getParameter('kernel.root_dir').'/FrameworkBundle';
+            $targetDir = $this->container->getParameter('kernel.root_dir').'/AcmeDemoBundle';
 
             $filesystem->remove($targetDir);
 
