@@ -1,7 +1,7 @@
 しんふぉにゃんを仕込むためのSymfony2バンドルです
 
 1. install
-$ git clone git@github.com:brtriver/SymfonyanBundle.git src/Acme/SymfonyanBundle
+$ git clone git://github.com/brtriver/SymfonyanBundle.git src/Acme/SymfonyanBundle
 
 2. cofigure
 if (in_array($this->getEnvironment(), array('dev', 'test'))) {
