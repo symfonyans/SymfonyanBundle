@@ -15,14 +15,11 @@ use Symfony\Component\Console\Command\Command;
  */
 class SymfonyanWelcomeInstallCommand extends Command
 {
-    /**
-     * @var \Symfony\Component\DependencyInjection\ContainerInterface
-     */
     protected $container;
 
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->container = $this->application->getKernel()->getContainer();
+        $this->container = $this->getApplication()->getKernel()->getContainer();
     }
     /**
      * @see Command
@@ -47,9 +44,9 @@ class SymfonyanWelcomeInstallCommand extends Command
 
         // Create the bundles directory otherwise symlink will fail.
         if (is_dir($originDir = __DIR__.'/../Resources/views/AcmeDemoBundle')) {
-            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/AcmeDemoBundle</comment>'));
+            $output->writeln(sprintf('Installing symfonyan welcomepage to <comment>app/Resources/AcmeDemoBundle</comment>'));
 
-            $targetDir = $this->container->getParameter('kernel.root_dir').'/AcmeDemoBundle';
+            $targetDir = $this->container->getParameter('kernel.root_dir').'/Resources/AcmeDemoBundle';
 
             $filesystem->remove($targetDir);
 
