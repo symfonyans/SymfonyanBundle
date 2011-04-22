@@ -53,7 +53,7 @@ class SymfonyanExceptionInstallCommand extends Command
             if ($input->getOption('symlink')) {
                 $filesystem->symlink($originDir, $targetDir);
             } else {
-                $filesystem->mkdirs($targetDir, 0777);
+                $filesystem->mkdir($targetDir, 0777);
                 $filesystem->mirror($originDir, $targetDir);
             }
         }
