@@ -9,11 +9,11 @@ use Symfony\Component\Console\Output\Output;
 use Symfony\Component\Console\Command\Command;
 
 /**
- * SymfonyanExcepotionInstallCommand.
+ * AcmeSymfonyanExcepotionInstallCommand.
  *
  * @author brtriver <brt.river@gmail.com>
  */
-class SymfonyanWelcomeInstallCommand extends Command
+class AcmeSymfonyanExceptionInstallCommand extends Command
 {
     protected $container;
 
@@ -27,9 +27,9 @@ class SymfonyanWelcomeInstallCommand extends Command
     protected function configure()
     {
         $this
-            ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlinks the welcome page instead of copying it')
-            ->setName('symfonyan:welcome-install')
-            ->setDescription('Change the welcome page to Symfonyan')
+            ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlinks the exception page instead of copying it')
+            ->setName('symfonyan:exception-install')
+            ->setDescription('Change the icon of the exception page to Symfonyan')
         ;
     }
 
@@ -43,10 +43,10 @@ class SymfonyanWelcomeInstallCommand extends Command
         $filesystem = $this->container->get('filesystem');
 
         // Create the bundles directory otherwise symlink will fail.
-        if (is_dir($originDir = __DIR__.'/../Resources/views/AcmeDemoBundle')) {
-            $output->writeln(sprintf('Installing symfonyan welcomepage to <comment>app/Resources/AcmeDemoBundle</comment>'));
+        if (is_dir($originDir = __DIR__.'/../Resources/views/TwigBundle')) {
+            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/Resources/FrameworkBundle</comment>'));
 
-            $targetDir = $this->container->getParameter('kernel.root_dir').'/Resources/AcmeDemoBundle';
+            $targetDir = $this->container->getParameter('kernel.root_dir').'/Resources/TwigBundle';
 
             $filesystem->remove($targetDir);
 
