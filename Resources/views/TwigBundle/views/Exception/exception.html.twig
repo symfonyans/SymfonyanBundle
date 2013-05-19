@@ -88,7 +88,7 @@
     </div>
 {% endif %}
 
-{% include 'TwigBundle:Exception:traces_text.html.twig' with { 'exception': exception } only %}
+{% include 'TwigBundle:Exception:traces_text.html.twig' ignore missing with { 'exception': exception } only %}
 
 <script type="text/javascript">//<![CDATA[
     function toggle(id, clazz) {
