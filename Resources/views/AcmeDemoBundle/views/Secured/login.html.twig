@@ -1,0 +1,39 @@
+{% extends 'AcmeDemoBundle:Base:layout.html.twig' %}
+
+{% block content %}
+    <h1 class="title">ログイン</h1>
+
+    <p>
+        どちらかでログインしてください
+    <ul>
+    <li>ユーザー: <em>user/userpass</em> <small>(ROLE_USER)</small></li>
+    <li>管理者: <em>admin/adminpass</em> <small>(ROLE_ADMIN)</small></li>
+    </ul>
+    </p>
+
+    {% if error %}
+        <div class="error">{{ error.message }}</div>
+    {% endif %}
+
+    <form action="{{ path("_security_check") }}" method="post" id="login">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="_password" />
+        </div>
+
+        <button type="submit" class="sf-button">
+            <span class="border-l">
+                <span class="border-r">
+                    <span class="btn-bg">Login</span>
+                </span>
+            </span>
+        </button>
+    </form>
+{% endblock %}
+
+{% set code = code(_self) %}
