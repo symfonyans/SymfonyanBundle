@@ -44,7 +44,7 @@ class AcmeSymfonyanExceptionInstallCommand extends Command
 
         // Create the bundles directory otherwise symlink will fail.
         if (is_dir($originDir = __DIR__.'/../Resources/views/TwigBundle')) {
-            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/Resources/FrameworkBundle</comment>'));
+            $output->writeln(sprintf('Installing symfonyan exception to <comment>app/Resources/TwigkBundle</comment>'));
 
             $targetDir = $this->container->getParameter('kernel.root_dir').'/Resources/TwigBundle';
 
