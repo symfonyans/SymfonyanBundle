@@ -12,7 +12,6 @@ Symfonyのプロジェクトの composer.json の最後に以下を追加して�
         ....
         symfonyan/acme-symfonyan-bundle: "dev-master"
     },
-    $ git clone git://github.com/symfonyans/SymfonyanBundle.git vendor/bundles/Acme/SymfonyanBundle
 
 cofigure
 --------
